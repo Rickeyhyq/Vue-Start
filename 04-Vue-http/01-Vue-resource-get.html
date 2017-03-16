@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-resource/dist/vue-resource.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click='getLogin'>发送get请求</button>
+    </div>
+
+    <script type="text/javascript">
+      new Vue({
+        el: '#app',
+        methods: {
+          getLogin () {
+            var url = "http://127.0.0.1:3000/login?username=zhangsan&password=123"
+            this.$http.get(url).then((res) => {
+              console.log(res.body)
+            }, (error) => {
+              if (error) console.log(error)
+            })
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
