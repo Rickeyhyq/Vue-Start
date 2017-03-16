@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    {{ msg | toLowerCase }}
+  </div>
+
+  <div id="app2">
+    {{ msg2 | toLowerCase2 }}
+  </div>
+
+  <script>
+
+    // 私有过滤器只作用于当前Vue实例中
+    var app = new Vue({
+      el: '#app',
+      data: {
+        msg: 'HELLO WORLD'
+      },
+      filters: {
+        toLowerCase: (input) => {
+          return input.toLowerCase()
+        }
+      }
+    })
+
+    var app2 = new Vue({
+      el: '#app2',
+      data: {
+        msg2: 'CLEVELAND'
+      },
+      filters: {
+        toLowerCase2: (input) => {
+          return input.toLowerCase()
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

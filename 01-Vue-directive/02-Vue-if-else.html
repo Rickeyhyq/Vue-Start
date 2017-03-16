@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <!-- v-show指令 -->
+  <!--<div v-if="show" id="app" v-on:click="change">
+      {{ msg }}
+    </div>-->
+
+  <!-- v-if-else指令 -->    
+  <!--<div id="app">
+    <div v-if="Math.random() > 0 && Math.random() < 0.4">
+      Now you see 1
+    </div>
+    <div v-else-if="Math.random() > 0.4 && Math.random() < 0.8">
+      Now you see 2
+    </div>
+    <div v-else>
+      Now you see 3
+    </div>
+  </div>-->
+
+  <!-- v-for指令 -->
+  <table id="app">
+    <tr>
+      <th>编号</th>
+      <th>姓名</th>
+      <th>性别</th>
+    </tr>
+  </table>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello World',
+        show: true
+      },
+      methods: {
+        change: function () {
+          this.show = false
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

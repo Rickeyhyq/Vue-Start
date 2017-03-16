@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app1">
+    {{ msg1 | global-filter }}
+  </div>
+
+  <div id="app2">
+    {{ msg2 | global-filter }}
+  </div>
+
+  <script>
+
+    // 全局过滤器对所有Vue实例都生效
+    Vue.filter('global-filter', (input) => {
+      return input.toLowerCase()
+    })
+
+
+    // 私有过滤器只作用于当前Vue实例中
+    var app1 = new Vue({
+      el: '#app1',
+      data: {
+        msg1: 'HELLO WORLD'
+      },
+      filters: {
+        toLowerCase1: (input) => {
+          return input.toLowerCase()
+        }
+      }
+    })
+
+    var app2 = new Vue({
+      el: '#app2',
+      data: {
+        msg2: 'CLEVELAND'
+      },
+      filters: {
+        toLowerCase2: (input) => {
+          return input.toLowerCase()
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

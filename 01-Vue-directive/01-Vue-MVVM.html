@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app" v-bind:style="font" v-on:click="change">
+    {{ msg }}
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello Vue',
+        font: 'font-size:40px;color:deepskyblue'
+      },
+      methods: {
+        change: function () {
+          this.msg = 'Hello world'
+          this.font = 'font-size:40px;color:pink'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
