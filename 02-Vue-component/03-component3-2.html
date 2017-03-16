@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- 使用组件 -->
+    <my-component>
+      <!-- 模板在组件内定义 -->
+      <template>
+        <div>
+          <a href="#">登录</a><br/>
+          <a href="#">注册</a>
+        </div>
+      </template>
+    </my-component>
+  </div>
+
+  <script>
+    // 组件写法3-2(常用)
+    // 直接在组件内定义模板，无需注册
+
+    // Vue.component('my-component', {
+    //   template: '#account'
+    // })
+
+    var app = new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+
+</html>
